@@ -35,6 +35,9 @@ public class MataKuliahApplication implements CommandLineRunner{
 	@Autowired
 	private PertanyaanRepository pertanyaanRepo;
 	
+	@Autowired
+	private PlotMataKuliahRepository plotMK;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(MataKuliahApplication.class, args);
 	}
@@ -43,77 +46,77 @@ public class MataKuliahApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		AdminUser admin = new AdminUser();
-		admin.setIdAdmin(1);
-		admin.setUsername("admin");
+//		AdminUser admin = new AdminUser();
+//		admin.setIdAdmin(1);
+//		admin.setUsername("admin");
+//		
+//		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//		String plainPassword = "12345";
+//		String encodedPassword = passwordEncoder.encode(plainPassword);
+//        admin.setPassword(encodedPassword);		
+//        
+//		admin.setRole("admin");
+//		
+//		
+//		adminRepo.save(admin);
+//		
+//		PlotMataKuliah plotMK = new PlotMataKuliah();
+//		
+//		
+//		Mahasiswa mahasiswa = new Mahasiswa();
+//		mahasiswa.setNamaMahasiswa("Aqil");
+//		mahasiswa.setJenisKelamin("Pria");
+//		mahasiswa.setNim("67890");
+//		mahasiswa.setPassword("gelap");
+//		
+//		plotMK.setMahasiswa(mahasiswa);
+//		
+//		Dosen dosen = new Dosen();
+//		dosen.setNamaDosen("Chelsea Monica");
+//		dosen.setUsername("monica");
+//		dosen.setPassword("catur");
+//		plotMK.setDosen(dosen);
+//		
+//		MataKuliah matakuliah = new MataKuliah();
+//		matakuliah.setNamaMataKuliah("Strategy Catur Terapan");
+//		plotMK.setMatakuliah(matakuliah);
+//		
+//		List<Soal> lstSoal = new ArrayList<Soal>();
+//		
+//		Soal soal1 = new Soal();
+//		soal1.setNamaSoal("Skakmat Aqil");
+//		soal1.setStatus(1);
+//		
+//		Nilai nilai = new Nilai();
+//		nilai.setNilai("80");
+//		soal1.setNilai(nilai);
+//		
+//		Pertanyaan pertanyaan1 = new Pertanyaan();
+//		pertanyaan1.setPertanyaan1("Siapa Dewa Kipas");
+//		pertanyaan1.setJawaban1("Sidiq");
+//		pertanyaan1.setJawaban2("Dadang");
+//		pertanyaan1.setJawaban3("Jouzu");
+//		pertanyaan1.setJawaban4("Tidak ada yang benar");
+//		pertanyaan1.setJawabanBenar("2");
+//		pertanyaan1.setStatusGambar("https://akcdn.detik.net.id/community/media/visual/2021/03/19/dadang-subur-dewa-kipas-1_169.jpeg");
+//		
+//		List<Pertanyaan> lstPertanyaan = new ArrayList<Pertanyaan>();
+//		lstPertanyaan.add(pertanyaan1);
+//		soal1.setLstPertanyaan(lstPertanyaan);
+//		
+//		
+//		
+//		lstSoal.add(soal1);
+//		
+//		plotMK.setLstSoal(lstSoal);
+//		this.plotMK.save(plotMK);
 		
-		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		String plainPassword = "12345";
-		String encodedPassword = passwordEncoder.encode(plainPassword);
-        admin.setPassword(encodedPassword);		
-        
-		admin.setRole("admin");
+		
+//		Soal soalx = this.soalRepo.findByNamaSoal("Soal Percintaan");
+//		
+//		System.out.println(soalx.getNamaSoal());
 		
 		
-		adminRepo.save(admin);
-		
-	/*	PlotMataKuliah plotMK = new PlotMataKuliah();
-		
-		
-		Mahasiswa mahasiswa = new Mahasiswa();
-		mahasiswa.setNamaMahasiswa("Aqil");
-		mahasiswa.setJenisKelamin("Pria");
-		mahasiswa.setNim("67890");
-		mahasiswa.setPassword("gelap");
-		
-		plotMK.setMahasiswa(mahasiswa);
-		
-		Dosen dosen = new Dosen();
-		dosen.setNamaDosen("Chelsea Monica");
-		dosen.setUsername("monica");
-		dosen.setPassword("catur");
-		plotMK.setDosen(dosen);
-		
-		MataKuliah matakuliah = new MataKuliah();
-		matakuliah.setNamaMataKuliah("Strategy Catur Terapan");
-		plotMK.setMatakuliah(matakuliah);
-		
-		List<Soal> lstSoal = new ArrayList<Soal>();
-		
-		Soal soal1 = new Soal();
-		soal1.setNamaSoal("Skakmat Aqil");
-		soal1.setStatus(1);
-		
-		Nilai nilai = new Nilai();
-		nilai.setNilai("80");
-		soal1.setNilai(nilai);
-		
-		Pertanyaan pertanyaan1 = new Pertanyaan();
-		pertanyaan1.setPertanyaan("Siapa Dewa Kipas");
-		pertanyaan1.setJawaban1("Sidiq");
-		pertanyaan1.setJawaban2("Dadang");
-		pertanyaan1.setJawaban3("Jouzu");
-		pertanyaan1.setJawaban4("Tidak ada yang benar");
-		pertanyaan1.setJawabanBenar("2");
-		pertanyaan1.setStatusGambar("https://akcdn.detik.net.id/community/media/visual/2021/03/19/dadang-subur-dewa-kipas-1_169.jpeg");
-		
-		List<Pertanyaan> lstPertanyaan = new ArrayList<Pertanyaan>();
-		lstPertanyaan.add(pertanyaan1);
-		soal1.setLstPertanyaan(lstPertanyaan);
-		
-		
-		
-		lstSoal.add(soal1);
-		
-		plotMK.setLstSoal(lstSoal);
-		this.plotMK.save(plotMK);
-		
-		
-		Soal soalx = this.soalRepo.findByNamaSoal("Soal Percintaan");
-		
-		System.out.println(soalx.getNamaSoal());
-		
-		*/
 	/*	Pertanyaan pertanyaan1 = new Pertanyaan();
 		pertanyaan1.setPertanyaan("Siapa Dewabrata");
 		pertanyaan1.setJawaban1("Trainer");

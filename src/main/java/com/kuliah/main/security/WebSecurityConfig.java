@@ -59,19 +59,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .logout().logoutSuccessUrl("/").permitAll();
             */
     	
-    	http.authorizeRequests()
-    	.antMatchers("/mahasiswa/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
-    	.antMatchers("/dosen/**").access("hasRole('ROLE_ADMIN')")
-    	.antMatchers("/matakuliah/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
-    	.antMatchers("/pertanyaan/**").access("hasRole('ROLE_ADMIN')")
-    	.antMatchers("/soal/**").access("hasRole('ROLE_ADMIN')")
-    	.antMatchers("/plotmatakuliah/**").access("hasRole('ROLE_ADMIN')").anyRequest().permitAll()
-    	.and()
-    	.formLogin().loginPage("/login")
-    	.defaultSuccessUrl("/matakuliah/view").permitAll()
-    	.and()
-   
-    	.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
+//    	http.authorizeRequests()
+//    	.antMatchers("/mahasiswa/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+//    	.antMatchers("/dosen/**").access("hasRole('ROLE_ADMIN')")
+//    	.antMatchers("/matakuliah/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+//    	.antMatchers("/pertanyaan/**").access("hasRole('ROLE_ADMIN')")
+//    	.antMatchers("/soal/**").access("hasRole('ROLE_ADMIN')")
+//    	.antMatchers("/plotmatakuliah/**").access("hasRole('ROLE_ADMIN')").anyRequest().permitAll()
+//    	.and()
+//    	.formLogin().loginPage("/login")
+//    	.defaultSuccessUrl("/matakuliah/view").permitAll()
+//    	.and()
+//   
+//    	.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
 
     	
     }
